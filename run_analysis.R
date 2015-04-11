@@ -72,5 +72,5 @@ cleaned$Subject_ID <- as.factor(cleaned$Subject_ID)
 rm(activity_labels,features, train_final, test_final)
 
 means.cleaned <- aggregate(cleaned[,-(1:2)], by=list(ID=cleaned$Subject_ID,Activity=cleaned$Activity),FUN=mean)
-write.table(cleaned,file="clean-data.txt",quote=F)
+write.table(means.cleaned,file="clean-data.txt",quote=F, row.names=F)
 
